@@ -3,17 +3,16 @@ var CyrptoJS=require("crypto-js");
 const express=require('express')
 var jwt=require("jsonwebtoken");
 const getUser=express.Router()
-require('dotenv').config()
+
 getUser.post('/',async (req, res) => {
 try
     {
     let user = await User.findOne({ "email": req.body.email });
-
-    const bytes = CyrptoJS.AES.decrypt(user.password, process.env.CRYPTO_KEY )
+    const bytes = CyrptoJS.AES.decrypt(user.password, 'brar123');
     let decryptedPass = bytes.toString(CyrptoJS.enc.Utf8);
     if (user) {
       if (req.body.email == user.email && req.body.password == decryptedPass) {
-          var token=jwt.sign({email: user.email,name: user.name,username: user.username},process.env.JWT_TOKEN_KEY,{
+          var token=jwt.sign({email: user.email,name: user.name,username: user.username},'jwttokens',{
             expiresIn:'10d'
         });
         res.status(200).json({success: true,token,email:user.email,name:user.name});
