@@ -15,7 +15,7 @@ try
           var token=jwt.sign({email: user.email,name: user.name,username: user.username,userID:user._id},'jwttokens',{
             expiresIn:'10d'
         });
-        res.status(200).json({success: true,token,email:user.email,name:user.name,userID:user._id});
+        res.status(200).json({success:true,user,token});
       } else if (
         req.body.email == user.email &&
         req.body.password != decryptedPass
