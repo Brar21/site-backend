@@ -12,10 +12,10 @@ try
     let decryptedPass = bytes.toString(CyrptoJS.enc.Utf8);
     if (user) {
       if (req.body.email == user.email && req.body.password == decryptedPass) {
-          var token=jwt.sign({email: user.email,name: user.name,username: user.username},'jwttokens',{
+          var token=jwt.sign({email: user.email,name: user.name,username: user.username,userID:user._id},'jwttokens',{
             expiresIn:'10d'
         });
-        res.status(200).json({success: true,token,email:user.email,name:user.name});
+        res.status(200).json({success: true,token,email:user.email,name:user.name,userID:user._id});
       } else if (
         req.body.email == user.email &&
         req.body.password != decryptedPass

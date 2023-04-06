@@ -7,7 +7,6 @@ const {Users}=require('./users/user')
 const {profile}=require('./Profile/update')
 const {password}=require('./Profile/password')
 const {contact}=require('./Profile/contactApi')
-const {single}=require('./blog/getblog')
 const cors=require('cors')
 //require("dotenv").config()
 
@@ -25,7 +24,6 @@ app.use('/User',Users)
 app.use('/info',profile)
 app.use('/password',password)
 app.use('/contact',contact)
-app.use('/single',single)
 app.listen(8080,async () =>
 {
     try
