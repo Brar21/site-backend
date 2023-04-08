@@ -7,12 +7,17 @@ const {Commentmodel}=require('../models/Comment')
 const blogroute=express.Router()
 
 blogroute.post("/blog",BlogValidator,async(req,res)=>{
-        try{
-    const blog=new Blogs(req.body)
+    console.log(res.body)
+    try
+    {
+        const username = await User.findOne({ "_id": req.body.userId })
+    const blog=new Blogs({...req.body,name:username.name})
+    
     await blog.save()
     res.status(200).json({msg:res.message})
-        }catch(err){
-    res.status(400).send({Error:err.message})
+        } catch(err)
+        {
+    res.status(400).send({Error:err.message,"err":"pta ni"})
         }
     })
 blogroute.get(`/`,async (req,res) =>

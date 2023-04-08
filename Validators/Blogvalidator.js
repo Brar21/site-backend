@@ -4,7 +4,7 @@ const BlogValidator = (req, res, next) => {
     return res.status(400).json({ msg: "You have to Login first" });
   } else if (!title || !description || !slug || !category) {
     return res.status(400).json({ msg: "All fields are mandatory!" });
-  }
+  } 
   next();
 };
 
