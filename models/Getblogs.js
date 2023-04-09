@@ -3,6 +3,7 @@ const GetBlogSchema = mongoose.Schema(
   {
     userId: { type: String },
     name: { type: String },
+    image: { type: String },
     title: { type: String, required: true, unique: true },
     slug: { type: String, required: true, unique: true },
     description: { type: String, required: true },

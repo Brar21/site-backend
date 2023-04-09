@@ -13,7 +13,6 @@ password.post('/',async (req,res) =>
         let acount=await User.findOne({email: user.email})
         const bytes=CyrptoJS.AES.decrypt(acount.password,'brar123');
         let decryptedPass=bytes.toString(CyrptoJS.enc.Utf8);
-        console.log(decryptedPass)
         if(decryptedPass==req.body.password&&req.body.newpassword==req.body.confirmpassword)
         {
             let userDb=await User.findOneAndUpdate({email: user.email},{password: CyrptoJS.AES.encrypt(req.body.confirmpassword,'brar123').toString()})
