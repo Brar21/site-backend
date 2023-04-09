@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "2f17b000-0322-40ea-ad29-1f601914c259",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://loacalhost:8080/blogs",
+    "url": "http://loacalhost:8080/blogs",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-04-09T05:54:43.962Z",
+    "modified": "2023-04-09T05:54:43.962Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "8821d2e6-a430-4bba-bab6-502388be873c",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/blogs",
+    "url": "http://localhost:8080/blogs/blog/642e63d1e4631b012395219f",
+    "method": "PATCH",
+    "sortNum": 0,
+    "created": "2023-04-09T05:55:05.512Z",
+    "modified": "2023-04-09T05:58:27.014Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"title\":\"React work\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "bed5f8c6-5cf3-4987-9d78-01f0f4324594",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/user/otp",
+    "url": "http://localhost:8080/user/otp",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-09T06:52:06.953Z",
+    "modified": "2023-04-09T06:52:06.953Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"vs21418@gmail.com\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f2edf9f1-803f-4439-8fa9-0c5af37f8834",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/user/verfiy",
+    "url": "http://localhost:8080/user/verfiy",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-09T06:57:46.274Z",
+    "modified": "2023-04-09T06:57:46.274Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"vs21418@gmail.com\",\n  \"otp\":\"276524\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "9e678aeb-3b09-4a38-9428-47601572f699",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/user/verify",
+    "url": "http://localhost:8080/user/verify",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-04-09T06:58:05.409Z",
+    "modified": "2023-04-09T07:53:21.239Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"vs21418@gmail.com\",\n  \"otp\":\"128239\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
