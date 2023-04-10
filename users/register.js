@@ -62,6 +62,49 @@ userroute.post("/otp",async (req,res) =>
         res.send(err)
     }
 })
+userroute.patch("/otp",async (req,res) =>
+{
+    const otp=Math.floor(100000+Math.random()*900000);
+    const {email}=req.body;
+    
+    try
+    {
+      let user=await Otpmodel.findOne({email:email});
+        
+      
+            const config={
+                service: 'gmail',
+                auth: {
+                    user: "sssaini67730@gmail.com",
+                    pass: "mpldhbnmuqposgkd"
+                }
+            }
+            let transporter=nodemailer.createTransport(config);
+            var mailOptions={
+                from: 'sssaini67730@gmail.com',
+                to: email,
+                subject: 'Your OTP for reset password',
+                text: `Your OTP is ${otp}. It will expire in 5 minutes.`
+            }
+            
+          await Otpmodel.findByIdAndUpdate({_id:user._id},{...req.body,otp:otp})
+            transporter.sendMail(mailOptions,function (error,info)
+            {
+                if(error)
+                {
+                    res.send(error);
+                } else
+                {
+                    res.send({Email: info.response});
+                }
+            });
+        }
+    
+    catch(err)
+    {
+        res.send(err)
+    }
+})
 userroute.post("/verify",async(req,res)=>{
     const {email,otp}=req.body;
     try{

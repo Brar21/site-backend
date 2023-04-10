@@ -34,5 +34,24 @@ try
     res.status(400).json({ Error: err.message });
   }
 });
+getUser.patch("/forget",async(req,res)=>{
+  try{
+const user=await User.findOne({email:req.body.email})
+console.log(user)
+if(user){
+  
+  let decryptedPass = CyrptoJS.AES.encrypt(req.body.password,'brar123').toString()
+  const update=await User.findByIdAndUpdate({_id:user._id},{...req.body,password:decryptedPass});
+  res.status(200).json({ success: true, error: "successfully forget password" });
+  
+}else{
+  res.status(400).json({ success: false, error: "No user Found" });
+
+}
+  }catch(err){
+    res.status(400).json({ Error: err.message });
+
+  }
+})
 
 module.exports={getUser}
