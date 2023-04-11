@@ -87,7 +87,7 @@ userroute.patch("/otp", async (req, res) => {
     var mailOptions = {
       from: "sssaini67730@gmail.com",
       to: email,
-      subject: "Your OTP for reset password",
+      subject: "OTP Request for Reset Password",
       text: `Email Verification code
 
 Please use the verification code below to Reset or Forget password of ${email}.
