@@ -60,12 +60,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-04-09T06:57:46.274Z",
-    "modified": "2023-04-09T06:57:46.274Z",
+    "modified": "2023-04-11T08:22:25.709Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\":\"vs21418@gmail.com\",\n  \"otp\":\"276524\"\n}",
+      "raw": "{\n  \"otp\":\"121658\",\n  \"email\":\"vs21418@gmail.com\"\n}",
       "form": []
     },
     "tests": []
@@ -75,16 +75,73 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:8080/user/verify",
-    "url": "http://localhost:8080/user/verify",
-    "method": "POST",
+    "url": "http://localhost:8080/user/otp",
+    "method": "PATCH",
     "sortNum": 0,
     "created": "2023-04-09T06:58:05.409Z",
-    "modified": "2023-04-09T07:53:21.239Z",
+    "modified": "2023-04-11T08:53:30.052Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\":\"vs21418@gmail.com\",\n  \"otp\":\"128239\"\n}",
+      "raw": "{\n  \"email\":\"vs21418@gmail.com\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "e1a8c989-c525-4187-852c-c8e498037db4",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://locallhost:8080/login/forget",
+    "url": "http://locallhost:8080/login/forget",
+    "method": "PATCH",
+    "sortNum": 0,
+    "created": "2023-04-11T08:17:39.153Z",
+    "modified": "2023-04-11T08:17:39.153Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"vs21418@gmail.com\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ca2621fb-9c89-4309-b1c6-4f75899805da",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/login/forget",
+    "url": "http://localhost:8080/login/forget",
+    "method": "PATCH",
+    "sortNum": 0,
+    "created": "2023-04-11T08:17:55.410Z",
+    "modified": "2023-04-11T08:17:55.410Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"vs21418@gmail.com\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "93f0b33f-19f8-4711-9fc6-95e1fe2bd0ac",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:8080/user/otp",
+    "url": "http://localhost:8080/user/otp",
+    "method": "PATCH",
+    "sortNum": 0,
+    "created": "2023-04-11T08:21:17.930Z",
+    "modified": "2023-04-11T08:21:17.930Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"vs21418@gmail.com\"\n}",
       "form": []
     },
     "tests": []
