@@ -73,8 +73,13 @@ userroute.patch("/otp", async (req, res) => {
   const otp = Math.floor(100000 + Math.random() * 900000);
   const { email } = req.body;
 
-  try {
-    let user = await Otpmodel.findOne({ email: email });
+    try
+    {
+        let user = await Otpmodel.findOne({ email: email });
+        if(!user)
+        {
+            res.send('please register first')
+        }
 
     const config = {
       service: "gmail",
