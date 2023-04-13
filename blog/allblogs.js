@@ -38,21 +38,17 @@ blogroute.delete("/blog/:id",async(req,res)=>{
 const {userid}=req.headers;
 console.log(req.headers.userid,req.ha)
     try{
-   const user=await Usermodel.findOne({_id:userid}) 
-   const blogs=await Blogmodel.findOne({userId:userid,_id:req.params.id})
+   const user=await User.findOne({_id:userid}) 
+   const blogs=await Blogs.findOne({userId:userid,_id:req.params.id})
    console.log(user,blogs)
 
-   if(user.admin){
-    const blog=await Blogmodel.findByIdAndDelete({_id:req.params.id})
-res.status(200).json({msg:" blog is deleted by admin",blog})
-   } 
-   else if(blogs){
-    const blog=await Blogmodel.findByIdAndDelete({_id:req.params.id})
+    if(blogs){
+    const blog=await Blogs.findByIdAndDelete({_id:req.params.id})
 
-    res.status(200).json({msg:"blog is deleted by authorized user",blog})
+    res.status(200).json({success:true,msg:"blog is deleted by authorized user",blog})
    }   
 else{
-    res.status(400).json({msg:"unauthorized user"})
+    res.status(400).json({success:false,msg:"unauthorized user"})
 }
 }catch(err){
 res.status(400).send("you have to login first")
@@ -63,17 +59,17 @@ blogroute.patch("/blog/:id",async(req,res)=>{
     
     console.log(req.headers)
         try{
-       const user=await Usermodel.findOne({_id:userid}) 
-       const blogs=await Blogmodel.findOne({userId:userid,_id:req.params.id})
+       const user=await User.findOne({_id:userid}) 
+       const blogs=await Blogs.findOne({userId:userid,_id:req.params.id})
        console.log(user,blogs)
     
        if(user.admin){
-        const blog=await Blogmodel.findByIdAndUpdate({_id:req.params.id},req.body)
+        const blog=await Blogs.findByIdAndUpdate({_id:req.params.id},req.body)
     res.status(200).json({msg:" blog is updated by admin",blog})
        } 
        else if(blogs){
-        const blog=await Blogmodel.findByIdAndUpdate({_id:req.params.id},req.body)
-        res.status(200).json({msg:"blog is updated by authorized user",blog})
+        const blog=await Blogs.findByIdAndUpdate({_id:req.params.id},req.body)
+        res.status(200).json({msg:"Blog is updated by authorized user",blog})
        }   
     else{
         res.status(400).json({msg:"unauthorized user"})

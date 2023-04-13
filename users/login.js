@@ -42,7 +42,7 @@ if(user){
   
   let decryptedPass = CyrptoJS.AES.encrypt(req.body.password,'brar123').toString()
   const update=await User.findByIdAndUpdate({_id:user._id},{...req.body,password:decryptedPass});
-  res.status(200).json({ success: true, error: "successfully forget password" });
+  res.status(200).json({ success: true, msg: "successfully forget password" });
   
 }else{
   res.status(400).json({ success: false, error: "No user Found" });

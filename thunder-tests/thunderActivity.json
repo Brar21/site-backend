@@ -75,16 +75,21 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:8080/user/verify",
-    "url": "http://localhost:8080/user/otp",
-    "method": "PATCH",
+    "url": "http://localhost:8080/blogs/blog/6437ae4b62f251e658e9006a",
+    "method": "DELETE",
     "sortNum": 0,
     "created": "2023-04-09T06:58:05.409Z",
-    "modified": "2023-04-11T08:53:30.052Z",
-    "headers": [],
+    "modified": "2023-04-13T07:26:26.830Z",
+    "headers": [
+      {
+        "name": "userid",
+        "value": "6437a801d643fc0db0361110"
+      }
+    ],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\":\"vs21418@gmail.com\"\n}",
+      "raw": "{\n  \"email\":\"vs21418@gmail.com\",\n  \"password\":\"123456789\"\n}",
       "form": []
     },
     "tests": []

@@ -3,7 +3,8 @@ var CyrptoJS = require("crypto-js");
 const express = require("express");
 const { Otpmodel } = require("../models/otp");
 const nodemailer = require("nodemailer");
-const userroute = express.Router();
+const userroute=express.Router();
+
 userroute.post("/register", async (req, res) => {
   try {
     const { name, email, username, phone, image } = req.body;
