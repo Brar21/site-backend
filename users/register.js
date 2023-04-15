@@ -79,7 +79,7 @@ userroute.patch("/otp", async (req, res) => {
         let user = await Otpmodel.findOne({ email: email });
         if(!user)
         {
-            res.send('please register first')
+            res.send({success:false})
         }
 
     const config = {
@@ -114,7 +114,7 @@ The JavascriptFolks team`,
       if (error) {
         res.send(error);
       } else {
-        res.send({ Email: info.response });
+        res.send({ Email: info.response ,success:true});
       }
     });
   } catch (err) {

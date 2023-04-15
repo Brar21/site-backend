@@ -75,11 +75,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:8080/user/verify",
-    "url": "http://localhost:8080/blogs/blog/6437ae4b62f251e658e9006a",
-    "method": "DELETE",
+    "url": "http://localhost:8080/blogs",
+    "method": "GET",
     "sortNum": 0,
     "created": "2023-04-09T06:58:05.409Z",
-    "modified": "2023-04-13T07:26:26.830Z",
+    "modified": "2023-04-13T08:42:27.911Z",
     "headers": [
       {
         "name": "userid",
@@ -89,7 +89,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\":\"vs21418@gmail.com\",\n  \"password\":\"123456789\"\n}",
+      "raw": "{\n  \"title\":\"vs21418@gmail.com\",\n  \"category\":\"123456789\"\n}",
       "form": []
     },
     "tests": []

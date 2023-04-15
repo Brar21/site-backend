@@ -37,7 +37,6 @@ try
 getUser.patch("/forget",async(req,res)=>{
   try{
 const user=await User.findOne({email:req.body.email})
-console.log(user)
 if(user){
   
   let decryptedPass = CyrptoJS.AES.encrypt(req.body.password,'brar123').toString()
