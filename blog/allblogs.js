@@ -12,9 +12,9 @@ blogroute.post("/blog", BlogValidator, async (req, res) => {
     const blog = new Blogs({ ...req.body, name: username.name,image:username.image });
 
     await blog.save();
-    res.status(200).json({ msg: res.message });
+    res.status(200).json({ msg:"Blog Posted Successfully" });
   } catch (err) {
-    res.status(400).send({ Error: err.message, err: "pta ni" });
+    res.status(400).send({ msg:"Login First" });
   }
 });
 blogroute.get(`/`, async (req, res) => {
