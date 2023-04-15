@@ -12,9 +12,9 @@ blogroute.post("/blog", BlogValidator, async (req, res) => {
     const blog = new Blogs({ ...req.body, name: username.name,image:username.image });
 
     await blog.save();
-    res.status(200).json({ msg:"Blog Posted Successfully" });
+    res.status(200).json({ msg:"Blog Posted Successfully",success:true });
   } catch (err) {
-    res.status(400).send({ msg:"Login First" });
+    res.status(400).send({ msg:"Login First",success:false });
   }
 });
 blogroute.get(`/`, async (req, res) => {
